@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default profile data
     const defaultProfileData = {
         name: "Musa Ok",
-        title: "Python Geliştirici Adayı",
-        about: "Bilgisayar mühendisliği öğrencisi olarak yazılım geliştirme alanında kendimi geliştiriyorum. Python geliştirici olma yolunda ilerliyorum ve yapay zeka teknolojilerine özel ilgi duyuyorum. Cursor AI ve diğer yapay zeka araçlarını etkin şekilde kullanabiliyorum. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
+        title: "Full Stack Web Developer",
+        about: "Bilgisayar mühendisliği öğrencisi olarak full stack web development alanında kendimi geliştiriyorum. Frontend tarafında HTML ve CSS, backend tarafında Python ve Java, veritabanı olarak SQLite kullanabiliyorum. Ayrıca C ve C++ ile sistem programlama ve algoritma geliştirme konularında deneyimim var. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
         email: "musaok425@gmail.com",
         phone: "05454117205",
-        skills: ["Python", "Django", "Flask", "Pandas", "NumPy", "Matplotlib", "Java", "HTML", "CSS", "C", "C++", "Dosya İşlemleri", "Cursor AI Kullanımı"]
+        skills: ["Python", "Java", "HTML", "CSS", "C", "C++", "SQLite", "Dosya İşlemleri", "Cursor AI Kullanımı"]
     };
 
     // Set default values in form
