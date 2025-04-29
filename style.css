@@ -4,17 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #3b82f6;
-    --accent-color: #60a5fa;
-    --text-color: #1f2937;
-    --light-bg: #f3f4f6;
-    --dark-bg: #1e293b;
-    --white: #ffffff;
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-}
-
 body {
     font-family: 'Inter', 'Segoe UI', sans-serif;
     line-height: 1.6;
@@ -26,6 +15,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #3b82f6;
+    --accent-color: #60a5fa;
+    --text-color: #1f2937;
+    --light-bg: #f3f4f6;
+    --dark-bg: #1e293b;
+    --white: #ffffff;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
 /* Header Styles */
@@ -119,10 +119,11 @@ nav {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 800;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1s ease;
 }
 
 .hero-content p {
@@ -130,6 +131,7 @@ nav {
     margin-bottom: 2rem;
     font-weight: 500;
     opacity: 0.9;
+    animation: fadeInUp 1s ease;
 }
 
 .hero-description {
@@ -139,6 +141,7 @@ nav {
     padding: 2rem;
     border-radius: 20px;
     backdrop-filter: blur(10px);
+    animation: fadeIn 1.5s ease;
 }
 
 .hero-description p {
@@ -148,10 +151,71 @@ nav {
     line-height: 1.8;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+.modern-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.modern-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Update other styles to match */
 .social-links {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    animation: fadeInUp 2s ease;
 }
 
 .social-icon {
@@ -166,6 +230,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .social-icon:hover {

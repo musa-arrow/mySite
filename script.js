@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Default profile data
     const defaultProfileData = {
         name: "Musa Ok",
-        title: "Full Stack Web Developer",
-        about: "Bilgisayar mühendisliği öğrencisi olarak full stack web development alanında kendimi geliştiriyorum. Frontend tarafında HTML ve CSS, backend tarafında Python ve Java, veritabanı olarak SQLite kullanabiliyorum. Ayrıca C ve C++ ile sistem programlama ve algoritma geliştirme konularında deneyimim var. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
+        title: "Yapay Zeka Geliştirici Adayı",
+        about: "Bilgisayar mühendisliği öğrencisi olarak yapay zeka mühendisi olma yolunda ilerliyorum. Python, NumPy, Pandas, SQL ve dosya işlemleri biliyorum. Yapay zeka ve makine öğrenmesi alanında kendimi geliştiriyorum. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
         email: "musaok425@gmail.com",
         phone: "05454117205",
-        skills: ["Python", "Java", "HTML", "CSS", "C", "C++", "SQLite", "Dosya İşlemleri", "Cursor AI Kullanımı"]
+        skills: ["Python", "NumPy", "Pandas", "HTML", "CSS", "Cursor AI", "Java", "C", "C++", "Dosya İşlemleri", "SQL"]
     };
 
     // Set default values in form
@@ -99,4 +99,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // Add animation on scroll
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.about-content, .skills-container, .contact-info');
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
+            
+            if (isVisible) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    // Initial animation setup
+    document.querySelectorAll('.about-content, .skills-container, .contact-info').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+
+    // Add scroll event listener
+    window.addEventListener('scroll', animateOnScroll);
+    // Initial check
+    animateOnScroll();
 }); 
