@@ -2,15 +2,54 @@ document.addEventListener('DOMContentLoaded', () => {
     const editForm = document.getElementById('edit-form');
     const profileForm = document.getElementById('profile-form');
     const skillsContainer = document.getElementById('skills-container');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    // Theme handling
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+
+    // Scroll animations
+    const revealElements = document.querySelectorAll('.about-content, .skills-container, .hobbies-container, .contact-info');
+    
+    const revealOnScroll = () => {
+        revealElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
+            const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
+            
+            if (isVisible) {
+                element.classList.add('active');
+            }
+        });
+    };
+
+    // Initial check
+    revealOnScroll();
+    window.addEventListener('scroll', revealOnScroll);
 
     // Default profile data
     const defaultProfileData = {
         name: "Musa Ok",
         title: "Yapay Zeka Geliştirici Adayı",
-        about: "Bilgisayar mühendisliği öğrencisi olarak yapay zeka mühendisi olma yolunda ilerliyorum. Python, NumPy, Pandas, SQL ve dosya işlemleri biliyorum. Yapay zeka ve makine öğrenmesi alanında kendimi geliştiriyorum. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
+        about: "İstanbul Arel Üniversitesi'nde tam burslu olarak Bilgisayar Mühendisliği öğrencisiyim. Yapay zeka mühendisi olma yolunda ilerliyorum. Python, NumPy, Pandas, SQL ve dosya işlemleri konularında yetkinim. Yapay zeka ve makine öğrenmesi alanında kendimi sürekli geliştiriyorum. Arel Yazılım Kulübü'nde yönetici olarak görev yapıyorum. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
         email: "musaok425@gmail.com",
         phone: "05454117205",
-        skills: ["Python", "NumPy", "Pandas", "HTML", "CSS", "Cursor AI", "Java", "C", "C++", "Dosya İşlemleri", "SQL"]
+        skills: ["Python", "NumPy", "Pandas", "HTML", "CSS", "Cursor AI", "Java", "C", "C++", "Dosya İşlemleri", "SQL"],
+        hobbies: ["Yüzme", "Futbol", "Masa Tenisi"]
     };
 
     // Set default values in form
@@ -20,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('input-email').value = defaultProfileData.email;
     document.getElementById('input-phone').value = defaultProfileData.phone;
     document.getElementById('input-skills').value = defaultProfileData.skills.join(', ');
+    document.getElementById('input-hobbies').value = defaultProfileData.hobbies.join(', ');
 
     // Update website content
     document.getElementById('name').textContent = defaultProfileData.name;
@@ -39,6 +79,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Update hobbies
+    const hobbiesContainer = document.getElementById('hobbies-container');
+    hobbiesContainer.innerHTML = '';
+    defaultProfileData.hobbies.forEach(hobby => {
+        const hobbyItem = document.createElement('div');
+        hobbyItem.className = 'hobby-item';
+        hobbyItem.innerHTML = `
+            <i class="fas fa-heart"></i>
+            <h3>${hobby}</h3>
+        `;
+        hobbiesContainer.appendChild(hobbyItem);
+    });
+
     // Hide edit form
     editForm.style.display = 'none';
 
@@ -56,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('input-email').value;
         const phone = document.getElementById('input-phone').value;
         const skills = document.getElementById('input-skills').value.split(',').map(skill => skill.trim());
+        const hobbies = document.getElementById('input-hobbies').value.split(',').map(hobby => hobby.trim());
 
         // Update website content
         document.getElementById('name').textContent = name;
@@ -75,6 +129,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Update hobbies
+        hobbiesContainer.innerHTML = '';
+        hobbies.forEach(hobby => {
+            const hobbyItem = document.createElement('div');
+            hobbyItem.className = 'hobby-item';
+            hobbyItem.innerHTML = `
+                <i class="fas fa-heart"></i>
+                <h3>${hobby}</h3>
+            `;
+            hobbiesContainer.appendChild(hobbyItem);
+        });
+
         // Hide edit form
         editForm.style.display = 'none';
 
@@ -85,7 +151,8 @@ document.addEventListener('DOMContentLoaded', () => {
             about,
             email,
             phone,
-            skills
+            skills,
+            hobbies
         };
         localStorage.setItem('profileData', JSON.stringify(profileData));
     });
@@ -100,30 +167,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add animation on scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.about-content, .skills-container, .contact-info');
-        elements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementBottom = element.getBoundingClientRect().bottom;
-            const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
-            
-            if (isVisible) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    const navOverlay = document.querySelector('.nav-overlay');
 
-    // Initial animation setup
-    document.querySelectorAll('.about-content, .skills-container, .contact-info').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
-    // Initial check
-    animateOnScroll();
+    navOverlay.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
 }); 

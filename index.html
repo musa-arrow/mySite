@@ -12,10 +12,20 @@
         <header>
             <nav>
                 <div class="logo">Musa Ok</div>
+                <div class="nav-right">
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+                <div class="nav-overlay"></div>
                 <ul class="nav-links">
                     <li><a href="#home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
                     <li><a href="#about"><i class="fas fa-user"></i> Hakkımda</a></li>
                     <li><a href="#skills"><i class="fas fa-code"></i> Yetenekler</a></li>
+                    <li><a href="#hobbies"><i class="fas fa-heart"></i> Hobiler</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> İletişim</a></li>
                 </ul>
             </nav>
@@ -30,11 +40,6 @@
                     <p>NumPy ile sayısal hesaplamalar ve veri işleme yapabiliyorum</p>
                     <p>Pandas ile veri analizi ve manipülasyonu yapabiliyorum</p>
                     <p>SQL ile veritabanı sorgulama ve yönetimi yapabiliyorum</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#about" class="modern-button">Hakkımda</a>
-                    <a href="#skills" class="modern-button">Yetenekler</a>
-                    <a href="#contact" class="modern-button">İletişim</a>
                 </div>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/musa-ok-416671351" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
@@ -58,15 +63,27 @@
             </div>
         </section>
 
+        <section id="hobbies" class="hobbies">
+            <h2><i class="fas fa-heart"></i> Hobiler</h2>
+            <div class="hobbies-container" id="hobbies-container">
+            </div>
+        </section>
+
         <section id="contact" class="contact">
             <h2><i class="fas fa-envelope"></i> İletişim</h2>
             <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> <span id="email">musaok425@gmail.com</span></p>
-                <p><i class="fas fa-phone"></i> <span id="phone">05454117205</span></p>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/musa-ok-416671351" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/TheLastKnightofCode" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:musaok425@gmail.com" target="_blank">
+                        <span id="email">musaok425@gmail.com</span>
+                    </a>
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:05454117205" target="_blank">
+                        <span id="phone">05454117205</span>
+                    </a>
+                </p>
             </div>
         </section>
 
@@ -75,34 +92,43 @@
         </footer>
     </div>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/905454117205" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <div class="edit-form" id="edit-form">
-        <h2></h2>
+        <h2>Profil Bilgilerini Düzenle</h2>
         <form id="profile-form">
             <div class="form-group">
-                <label for="input-name"></label>
+                <label for="input-name">Ad Soyad</label>
                 <input type="text" id="input-name" required>
             </div>
             <div class="form-group">
-                <label for="input-title"></label>
+                <label for="input-title">Ünvan</label>
                 <input type="text" id="input-title" required>
             </div>
             <div class="form-group">
-                <label for="input-about"></label>
+                <label for="input-about">Hakkımda</label>
                 <textarea id="input-about" required></textarea>
             </div>
             <div class="form-group">
-                <label for="input-email"></label>
+                <label for="input-email">E-posta</label>
                 <input type="email" id="input-email" required>
             </div>
             <div class="form-group">
-                <label for="input-phone"></label>
+                <label for="input-phone">Telefon</label>
                 <input type="tel" id="input-phone" required>
             </div>
             <div class="form-group">
-                <label for="input-skills"></label>
+                <label for="input-skills">Yetenekler (virgülle ayırın)</label>
                 <input type="text" id="input-skills" required>
             </div>
-            <button type="submit"></button>
+            <div class="form-group">
+                <label for="input-hobbies">Hobiler (virgülle ayırın)</label>
+                <input type="text" id="input-hobbies" required>
+            </div>
+            <button type="submit">Kaydet</button>
         </form>
     </div>
 
