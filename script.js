@@ -45,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultProfileData = {
         name: "Musa Ok",
         title: "Yapay Zeka Geliştirici Adayı",
-        about: "İstanbul Arel Üniversitesi'nde tam burslu olarak Bilgisayar Mühendisliği öğrencisiyim. Yapay zeka mühendisi olma yolunda ilerliyorum. Python, NumPy, Pandas, SQL ve dosya işlemleri konularında yetkinim. Yapay zeka ve makine öğrenmesi alanında kendimi sürekli geliştiriyorum. Arel Yazılım Kulübü'nde yönetici olarak görev yapıyorum. Sürekli öğrenmeye ve kendimi geliştirmeye odaklanıyorum.",
+        about: "İstanbul Arel Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Yapay zeka ve makine öğrenmesi alanında tutkulu bir geliştiriciyim. Python ekosistemi (NumPy, Pandas) ve veri bilimi konularında deneyimliyim. Arel Yazılım Kulübü'nde aktif olarak çalışıyor ve sürekli kendimi geliştiriyorum. Hedefim, yapay zeka teknolojilerini kullanarak yenilikçi çözümler üretmek.",
         email: "musaok425@gmail.com",
         phone: "05454117205",
-        skills: ["Python", "NumPy", "Pandas", "HTML", "CSS", "Cursor AI", "Java", "C", "C++", "Dosya İşlemleri", "SQL"],
+        skills: ["Python", "NumPy", "Pandas", "HTML", "CSS", "Cursor AI", "Java", "C", "C++", "Dosya İşlemleri", "Makine Öğrenmesi"],
         hobbies: ["Yüzme", "Futbol", "Masa Tenisi"]
     };
 
