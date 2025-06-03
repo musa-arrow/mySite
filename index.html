@@ -1,137 +1,586 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeni Proje</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Musa Ok - Yapay Zeka Geliştirici</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0984E3',secondary:'#2D3436'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+scroll-behavior: smooth;
+}
+.hero-gradient {
+background: linear-gradient(135deg, rgba(45, 52, 54, 0.9) 0%, rgba(9, 132, 227, 0.8) 100%);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 24px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #0984E3;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+.scrollbar-hide::-webkit-scrollbar {
+display: none;
+}
+.scrollbar-hide {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+</style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <nav>
-                <div class="logo">Musa Ok</div>
-                <div class="nav-right">
-                    <button id="theme-toggle" class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                    <div class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </div>
-                <div class="nav-overlay"></div>
-                <ul class="nav-links">
-                    <li><a href="#home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-                    <li><a href="#about"><i class="fas fa-user"></i> Hakkımda</a></li>
-                    <li><a href="#skills"><i class="fas fa-code"></i> Yetenekler</a></li>
-                    <li><a href="#hobbies"><i class="fas fa-heart"></i> Hobiler</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> İletişim</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 id="name">Musa Ok</h1>
-                <p id="title">Yapay Zeka Geliştirici Adayı</p>
-                <div class="hero-description">
-                    <p>Python programlama dili ile geliştirme yapabiliyorum</p>
-                    <p>NumPy ile sayısal hesaplamalar ve veri işleme yapabiliyorum</p>
-                    <p>Pandas ile veri analizi ve manipülasyonu yapabiliyorum</p>
-                    <p>Makine öğrenmesi ile projeler geliştirebiliyorum</p>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/musa-ok-416671351" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/musa-arrow" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <h2><i class="fas fa-user"></i> Hakkımda</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p id="about-text"></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <h2><i class="fas fa-code"></i> Yetenekler</h2>
-            <div class="skills-container" id="skills-container">
-            </div>
-        </section>
-
-        <section id="hobbies" class="hobbies">
-            <h2><i class="fas fa-heart"></i> Hobiler</h2>
-            <div class="hobbies-container" id="hobbies-container">
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <h2><i class="fas fa-envelope"></i> İletişim</h2>
-            <div class="contact-info">
-                <p>
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:musaok425@gmail.com" target="_blank">
-                        <span id="email">musaok425@gmail.com</span>
-                    </a>
-                </p>
-                <p>
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:05454117205" target="_blank">
-                        <span id="phone">05454117205</span>
-                    </a>
-                </p>
-            </div>
-        </section>
-
-        <footer>
-            <p></p>
-        </footer>
-    </div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/905454117205" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <div class="edit-form" id="edit-form">
-        <h2>Profil Bilgilerini Düzenle</h2>
-        <form id="profile-form">
-            <div class="form-group">
-                <label for="input-name">Ad Soyad</label>
-                <input type="text" id="input-name" required>
-            </div>
-            <div class="form-group">
-                <label for="input-title">Ünvan</label>
-                <input type="text" id="input-title" required>
-            </div>
-            <div class="form-group">
-                <label for="input-about">Hakkımda</label>
-                <textarea id="input-about" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="input-email">E-posta</label>
-                <input type="email" id="input-email" required>
-            </div>
-            <div class="form-group">
-                <label for="input-phone">Telefon</label>
-                <input type="tel" id="input-phone" required>
-            </div>
-            <div class="form-group">
-                <label for="input-skills">Yetenekler (virgülle ayırın)</label>
-                <input type="text" id="input-skills" required>
-            </div>
-            <div class="form-group">
-                <label for="input-hobbies">Hobiler (virgülle ayırın)</label>
-                <input type="text" id="input-hobbies" required>
-            </div>
-            <button type="submit">Kaydet</button>
-        </form>
-    </div>
-
-    <script src="script.js"></script>
+<body class="bg-gray-50 text-gray-800">
+<!-- Header/Navigation -->
+<header class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm">
+<div class="container mx-auto px-4 py-3 flex justify-between items-center">
+<a href="#" class="text-2xl font-['Pacifico'] text-primary">Musa</a>
+<!-- Mobile menu button -->
+<button id="menuToggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+<!-- Desktop Navigation -->
+<nav class="hidden lg:flex items-center space-x-8">
+<a href="#home" class="font-medium text-gray-700 hover:text-primary transition-colors">Ana Sayfa</a>
+<a href="#about" class="font-medium text-gray-700 hover:text-primary transition-colors">Hakkımda</a>
+<a href="#skills" class="font-medium text-gray-700 hover:text-primary transition-colors">Yetenekler</a>
+<a href="#hobbies" class="font-medium text-gray-700 hover:text-primary transition-colors">Hobiler</a>
+<a href="#contact" class="px-5 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">İletişime Geç</a>
+</nav>
+</div>
+<!-- Mobile Navigation -->
+<div id="mobileMenu" class="hidden lg:hidden bg-white shadow-md">
+<div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+<a href="#home" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Ana Sayfa</a>
+<a href="#about" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Hakkımda</a>
+<a href="#skills" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Yetenekler</a>
+<a href="#hobbies" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Hobiler</a>
+<a href="#contact" class="font-medium text-gray-700 hover:text-primary transition-colors py-2">İletişim</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=A%20modern%2C%20minimalist%20workspace%20with%20a%20computer%20showing%20AI%20development%20code%2C%20soft%20gradient%20lighting%2C%20clean%20desk%20with%20minimal%20objects%2C%20blue%20accent%20lighting%2C%20high-tech%20atmosphere%20but%20not%20overwhelming%2C%20perfect%20for%20a%20professional%20AI%20developer%20portfolio%20hero%20image%2C%20with%20empty%20space%20on%20the%20left%20side%20for%20text&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="container mx-auto px-4 z-10 w-full">
+<div class="max-w-3xl">
+<h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Musa Ok</h1>
+<h2 class="text-xl md:text-2xl font-medium text-white opacity-90 mb-8">Yapay Zeka Geliştirici Adayı</h2>
+<p class="text-white text-lg opacity-80 mb-10 max-w-2xl">
+Python, NumPy ve Pandas ile veri analizi ve makine öğrenmesi alanında çözümler geliştiriyorum. Yenilikçi yapay zeka teknolojileriyle geleceği şekillendirmeyi hedefliyorum.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="#about" class="px-6 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Hakkımda</a>
+<a href="#contact" class="px-6 py-3 bg-white text-primary font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">İletişime Geç</a>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Hakkımda</h2>
+<div class="w-20 h-1 bg-primary mx-auto"></div>
+</div>
+<div class="flex flex-col lg:flex-row items-center">
+<div class="w-full">
+<h3 class="text-2xl font-bold mb-6">Yapay Zeka Tutkunu</h3>
+<p class="text-gray-700 mb-6 leading-relaxed">
+İstanbul Arel Üniversitesi Bilgisayar Mühendisliği bölümünde eğitimime devam ediyorum. Yapay zeka ve makine öğrenmesi alanlarında kendimi sürekli geliştirmeye odaklanıyorum.
+</p>
+<p class="text-gray-700 mb-8 leading-relaxed">
+Python ekosistemi (NumPy, Pandas) ve veri bilimi konularında deneyim sahibiyim. Arel Yazılım Kulübü'nde aktif olarak çalışıyor ve sürekli kendimi geliştiriyorum. Hedefim, yapay zeka teknolojilerini kullanarak yenilikçi çözümler üretmek ve bu alanda uzmanlaşmak.
+</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-graduation-cap-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Eğitim</h4>
+<p class="text-gray-600">İstanbul Arel Üniversitesi, Bilgisayar Mühendisliği</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-code-box-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Uzmanlık</h4>
+<p class="text-gray-600">Python, Veri Bilimi, Makine Öğrenmesi</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-team-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Topluluk</h4>
+<p class="text-gray-600">Arel Yazılım Kulübü Aktif Üyesi</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-target-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Hedef</h4>
+<p class="text-gray-600">Yapay Zeka Alanında Uzmanlaşmak</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Yeteneklerim</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-2xl mx-auto">
+Yazılım geliştirme ve yapay zeka alanında edindiğim teknik beceriler
+</p>
+</div>
+<!-- Skill Categories -->
+<div class="flex justify-center mb-12">
+<div class="inline-flex p-1 bg-gray-100 rounded-full">
+<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap bg-primary text-white" data-category="all">Tümü</button>
+<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="programming">Programlama</button>
+<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="data">Veri Bilimi</button>
+<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="web">Web Teknolojileri</button>
+</div>
+</div>
+<!-- Skills Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Python -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="programming">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-python-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Python</h3>
+</div>
+<p class="text-gray-600 mb-4">Temel Python programlama, nesne yönelimli programlama, veri yapıları ve algoritmalar</p>
+</div>
+<!-- NumPy -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="data">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-database-2-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">NumPy</h3>
+</div>
+<p class="text-gray-600">Sayısal hesaplamalar, veri işleme, çok boyutlu diziler ve matematiksel işlemler</p>
+</div>
+<!-- Pandas -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="data">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-bar-chart-box-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Pandas</h3>
+</div>
+<p class="text-gray-600">Veri analizi, manipülasyon, temizleme ve görselleştirme</p>
+</div>
+<!-- HTML -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="web">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-html5-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">HTML</h3>
+</div>
+<p class="text-gray-600">Web sayfası yapısı oluşturma, semantik HTML5 elementleri</p>
+</div>
+<!-- CSS -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="web">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-css3-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">CSS</h3>
+</div>
+<p class="text-gray-600">Web sayfası stillemesi, responsive tasarım, CSS animasyonları</p>
+</div>
+<!-- Machine Learning -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="data">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-brain-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Makine Öğrenmesi</h3>
+</div>
+<p class="text-gray-600">Temel ML algoritmaları, veri ön işleme, model eğitimi ve değerlendirme</p>
+</div>
+<!-- Java -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="programming">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-code-s-slash-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Java</h3>
+</div>
+<p class="text-gray-600">Temel Java programlama, OOP prensipleri, veri yapıları</p>
+</div>
+<!-- C/C++ -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="programming">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-code-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">C/C++</h3>
+</div>
+<p class="text-gray-600">Temel C/C++ programlama, bellek yönetimi, veri yapıları</p>
+</div>
+<!-- Cursor AI -->
+<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="data">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-robot-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Cursor AI</h3>
+</div>
+<p class="text-gray-600">AI destekli kod geliştirme, kod tamamlama ve optimizasyon</p>
+</div>
+</div>
+</section>
+<!-- Hobbies Section -->
+<section id="hobbies" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Hobilerim</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-2xl mx-auto">
+Kodlama dışında vaktimi değerlendirdiğim aktiviteler
+</p>
+</div>
+<div class="relative">
+<div class="overflow-x-auto scrollbar-hide pb-6">
+<div class="flex space-x-6 min-w-max">
+<!-- Swimming -->
+<div class="w-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Swimming%20pool%20with%20clear%20blue%20water%2C%20professional%20swimming%20lanes%2C%20bright%20and%20modern%20facility%2C%20clean%20and%20well-maintained%2C%20showing%20the%20sport%20of%20swimming%20in%20a%20professional%20setting&width=640&height=360&seq=swimming1&orientation=landscape" alt="Yüzme" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-3">
+<i class="ri-swim-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Yüzme</h3>
+</div>
+<p class="text-gray-600 mb-6 flex-1">
+Haftada iki kez düzenli olarak yüzüyorum. Su sporları hem fiziksel sağlığımı koruyor hem de zihinsel olarak rahatlamama yardımcı oluyor.
+</p>
+<div class="flex items-center text-sm text-gray-500">
+<i class="ri-time-line mr-2"></i>
+<span>10 yıldır düzenli yapıyorum</span>
+</div>
+</div>
+</div>
+<!-- Football -->
+<div class="w-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Modern%20football%20field%20with%20green%20grass%2C%20players%20in%20action%2C%20sunny%20day%2C%20amateur%20football%20match%2C%20showing%20the%20sport%20in%20a%20community%20setting%2C%20energetic%20atmosphere&width=640&height=360&seq=football1&orientation=landscape" alt="Futbol" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-3">
+<i class="ri-football-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Futbol</h3>
+</div>
+<p class="text-gray-600 mb-6 flex-1">
+Arkadaşlarımla hafta sonları halı saha maçları yapıyoruz. Takım çalışması ve stratejik düşünme becerilerimi geliştiriyor.
+</p>
+<div class="flex items-center text-sm text-gray-500">
+<i class="ri-time-line mr-2"></i>
+<span>10 yıldır oynuyorum</span>
+</div>
+</div>
+</div>
+<!-- Table Tennis -->
+<div class="w-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=Table%20tennis%20match%20in%20progress%2C%20modern%20ping%20pong%20table%2C%20players%20in%20action%2C%20indoor%20sports%20facility%2C%20focused%20players%2C%20showing%20the%20precision%20and%20skill%20of%20table%20tennis&width=640&height=360&seq=tabletennis1&orientation=landscape" alt="Masa Tenisi" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-3">
+<i class="ri-ping-pong-line ri-lg"></i>
+</div>
+<h3 class="text-xl font-semibold">Masa Tenisi</h3>
+</div>
+<p class="text-gray-600 mb-6 flex-1">
+Üniversitede boş zamanlarımda masa tenisi oynuyorum. Reflekslerimi geliştiriyor ve hızlı karar verme yeteneğimi artırıyor.
+</p>
+<div class="flex items-center text-sm text-gray-500">
+<i class="ri-time-line mr-2"></i>
+<span>3 yıldır oynuyorum</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll buttons -->
+<button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 focus:outline-none z-10 hover:bg-gray-50">
+<i class="ri-arrow-left-s-line ri-lg"></i>
+</button>
+<button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 focus:outline-none z-10 hover:bg-gray-50">
+<i class="ri-arrow-right-s-line ri-lg"></i>
+</button>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">İletişime Geç</h2>
+<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
+<p class="text-gray-600 max-w-2xl mx-auto">
+Projeleriniz, iş birliği fırsatları veya sorularınız için benimle iletişime geçebilirsiniz
+</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="lg:w-1/2">
+<form class="bg-white p-8 rounded-xl shadow-md">
+<h3 class="text-2xl font-bold mb-6">Mesaj Gönder</h3>
+<div class="mb-6">
+<label for="name" class="block text-gray-700 font-medium mb-2">Adınız</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Adınız Soyadınız">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 font-medium mb-2">E-posta Adresiniz</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="ornek@email.com">
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 font-medium mb-2">Konu</label>
+<input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Mesajınızın konusu">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 font-medium mb-2">Mesajınız</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Mesajınızı buraya yazın..."></textarea>
+</div>
+<div class="flex items-center mb-6">
+<label class="custom-switch mr-3">
+<input type="checkbox" checked>
+<span class="slider"></span>
+</label>
+<span class="text-gray-600 text-sm">Benimle iletişime geçilmesine izin veriyorum</span>
+</div>
+<button type="submit" class="w-full bg-primary text-white font-medium py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Mesaj Gönder</button>
+</form>
+</div>
+<div class="lg:w-1/2">
+<div class="bg-white p-8 rounded-xl shadow-md h-full">
+<h3 class="text-2xl font-bold mb-6">İletişim Bilgilerim</h3>
+<div class="space-y-6 mb-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-mail-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">E-posta</h4>
+<a href="mailto:musaok425@gmail.com" class="text-gray-600 hover:text-primary">musaok425@gmail.com</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-phone-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Telefon</h4>
+<a href="tel:+905454117205" class="text-gray-600 hover:text-primary">+90 545 411 7205</a>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-map-pin-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Konum</h4>
+<p class="text-gray-600">İstanbul, Türkiye</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
+<i class="ri-school-line ri-lg"></i>
+</div>
+<div>
+<h4 class="font-medium text-lg mb-1">Üniversite</h4>
+<p class="text-gray-600">İstanbul Arel Üniversitesi</p>
+</div>
+</div>
+</div>
+<h4 class="font-medium text-lg mb-4">Sosyal Medya</h4>
+<div class="flex space-x-4">
+<a href="https://www.linkedin.com/in/musa-ok-416671351/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors" data-readdy="true">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="https://github.com/musa-arrow" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors" data-readdy="true">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+</div>
+<div class="mt-8 h-64 rounded-xl overflow-hidden">
+<div style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;" class="w-full h-full"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<a href="#" class="text-2xl font-['Pacifico'] text-white">Musa</a>
+<p class="text-gray-400 mt-2">Yapay Zeka Geliştirici Adayı</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#home" class="text-gray-400 hover:text-white transition-colors">Ana Sayfa</a>
+<a href="#about" class="text-gray-400 hover:text-white transition-colors">Hakkımda</a>
+<a href="#skills" class="text-gray-400 hover:text-white transition-colors">Yetenekler</a>
+<a href="#hobbies" class="text-gray-400 hover:text-white transition-colors">Hobiler</a>
+<a href="#contact" class="text-gray-400 hover:text-white transition-colors">İletişim</a>
+</div>
+</div>
+<hr class="border-gray-800 my-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">
+&copy; 2025 Musa Ok. Tüm hakları saklıdır.
+</p>
+<div class="flex space-x-6">
+<a href="https://www.linkedin.com/in/musa-ok-416671351/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors" data-readdy="true">
+<i class="ri-linkedin-fill ri-lg"></i>
+</a>
+<a href="https://github.com/musa-arrow" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors" data-readdy="true">
+<i class="ri-github-fill ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script id="navigationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+menuToggle.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+if (mobileMenu.classList.contains('hidden')) {
+menuToggle.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+} else {
+menuToggle.innerHTML = '<i class="ri-close-line ri-lg"></i>';
+}
+});
+// Close mobile menu when clicking on a link
+const mobileLinks = mobileMenu.querySelectorAll('a');
+mobileLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+menuToggle.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+});
+});
+// Smooth scrolling for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+const targetId = this.getAttribute('href');
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+window.scrollTo({
+top: targetElement.offsetTop - 80,
+behavior: 'smooth'
+});
+}
+});
+});
+});
+</script>
+<script id="skillFilterScript">
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.skill-filter');
+const skillCards = document.querySelectorAll('.skill-card');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+const category = this.getAttribute('data-category');
+// Update active button
+filterButtons.forEach(btn => {
+btn.classList.remove('bg-primary', 'text-white');
+btn.classList.add('text-gray-700');
+});
+this.classList.remove('text-gray-700');
+this.classList.add('bg-primary', 'text-white');
+// Filter cards
+skillCards.forEach(card => {
+if (category === 'all' || card.getAttribute('data-category') === category) {
+card.style.display = 'block';
+} else {
+card.style.display = 'none';
+}
+});
+});
+});
+});
+</script>
+<script id="hobbiesScrollScript">
+document.addEventListener('DOMContentLoaded', function() {
+const scrollContainer = document.querySelector('.overflow-x-auto');
+const scrollLeftBtn = document.getElementById('scrollLeft');
+const scrollRightBtn = document.getElementById('scrollRight');
+scrollLeftBtn.addEventListener('click', function() {
+scrollContainer.scrollBy({
+left: -320,
+behavior: 'smooth'
+});
+});
+scrollRightBtn.addEventListener('click', function() {
+scrollContainer.scrollBy({
+left: 320,
+behavior: 'smooth'
+});
+});
+});
+</script>
 </body>
-</html> 
+</html>
