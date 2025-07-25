@@ -1,613 +1,206 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Musa Ok - Aspiring Cybersecurity Specialist</title>
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#0984E3',secondary:'#2D3436'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Inter', sans-serif;
-scroll-behavior: smooth;
-}
-.hero-gradient {
-background: linear-gradient(135deg, rgba(45, 52, 54, 0.9) 0%, rgba(9, 132, 227, 0.8) 100%);
-}
-.custom-switch {
-position: relative;
-display: inline-block;
-width: 50px;
-height: 24px;
-}
-.custom-switch input {
-opacity: 0;
-width: 0;
-height: 0;
-}
-.slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #ccc;
-transition: .4s;
-border-radius: 24px;
-}
-.slider:before {
-position: absolute;
-content: "";
-height: 18px;
-width: 18px;
-left: 3px;
-bottom: 3px;
-background-color: white;
-transition: .4s;
-border-radius: 50%;
-}
-input:checked + .slider {
-background-color: #0984E3;
-}
-input:checked + .slider:before {
-transform: translateX(26px);
-}
-.scrollbar-hide::-webkit-scrollbar {
-display: none;
-}
-.scrollbar-hide {
--ms-overflow-style: none;
-scrollbar-width: none;
-}
-.kaggle-icon {
-    width: 24px;
-    height: 24px;
-    fill: currentColor;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musa | Kişisel Portföy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800">
-<!-- Header/Navigation -->
-<header class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-sm">
-<div class="container mx-auto px-4 py-3 flex justify-between items-center">
-<a href="#" class="text-2xl font-['Pacifico'] text-primary">Musa</a>
-<!-- Mobile menu button -->
-<button id="menuToggle" class="lg:hidden w-10 h-10 flex items-center justify-center text-gray-700">
-<i class="ri-menu-line ri-lg"></i>
-</button>
-<!-- Desktop Navigation -->
-<nav class="hidden lg:flex items-center space-x-8">
-<a href="#home" class="font-medium text-gray-700 hover:text-primary transition-colors">Home</a>
-<a href="#about" class="font-medium text-gray-700 hover:text-primary transition-colors">About</a>
-<a href="#skills" class="font-medium text-gray-700 hover:text-primary transition-colors">Skills</a>
-<a href="#hobbies" class="font-medium text-gray-700 hover:text-primary transition-colors">Hobbies</a>
-<a href="#contact" class="px-5 py-2 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Contact</a>
-</nav>
-</div>
-<!-- Mobile Navigation -->
-<div id="mobileMenu" class="hidden lg:hidden bg-white shadow-md">
-<div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-<a href="#home" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Home</a>
-<a href="#about" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">About</a>
-<a href="#skills" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Skills</a>
-<a href="#hobbies" class="font-medium text-gray-700 hover:text-primary transition-colors py-2 border-b border-gray-100">Hobbies</a>
-<a href="#contact" class="font-medium text-gray-700 hover:text-primary transition-colors py-2">Contact</a>
-</div>
-</div>
-</header>
-<!-- Hero Section -->
-<section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://readdy.ai/api/search-image?query=A%20modern%2C%20minimalist%20workspace%20with%20a%20computer%20showing%20AI%20development%20code%2C%20soft%20gradient%20lighting%2C%20clean%20desk%20with%20minimal%20objects%2C%20blue%20accent%20lighting%2C%20high-tech%20atmosphere%20but%20not%20overwhelming%2C%20perfect%20for%20a%20professional%20AI%20developer%20portfolio%20hero%20image%2C%20with%20empty%20space%20on%20the%20left%20side%20for%20text&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 hero-gradient"></div>
-<div class="container mx-auto px-4 z-10 w-full">
-<div class="max-w-3xl">
-<h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Musa Ok</h1>
-<h2 class="text-xl md:text-2xl font-medium text-white opacity-90 mb-8">AI & Cybersecurity Learner</h2>
-<p class="text-white text-lg opacity-80 mb-10 max-w-2xl">
-I'm currently studying Computer Engineering at Istanbul Arel University.<br>
-I am passionate about both Artificial Intelligence and Cybersecurity — I take courses and work on projects in both fields.<br>
-My interests include machine learning, deep learning, data-driven problem solving, and understanding how to secure digital systems.<br>
-I enjoy exploring how AI can be used to enhance security, automate detection, and solve real-world challenges.<br>
-I'm building hands-on experience with Python, Linux, machine learning frameworks, and cybersecurity tools like Wireshark and Nmap as part of my studies and personal projects.
-</p>
-<div class="flex flex-wrap gap-4">
-<a href="#about" class="px-6 py-3 bg-primary text-white font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">About</a>
-<a href="#contact" class="px-6 py-3 bg-white text-primary font-medium !rounded-button whitespace-nowrap hover:bg-opacity-90 transition-colors">Contact</a>
-</div>
-</div>
-</section>
-<!-- About Section -->
-<section id="about" class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">About</h2>
-<div class="w-20 h-1 bg-primary mx-auto"></div>
-</div>
-<div class="flex flex-col lg:flex-row items-center">
-<div class="w-full">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-graduation-cap-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Education</h4>
-<p class="text-gray-600">Istanbul Arel University, Computer Engineering</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-cpu-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Main Focus</h4>
-<p class="text-gray-600">Learning Artificial Intelligence and Cybersecurity through coursework and personal projects</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-brain-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Interests</h4>
-<p class="text-gray-600">Machine Learning, Deep Learning, Data Science, Security Automation</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-shield-user-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Current Studies</h4>
-<p class="text-gray-600">Developing skills in AI and Cybersecurity, working on academic and personal projects</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Trainings Section -->
-<section id="trainings" class="py-20 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Trainings</h2>
-      <div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
-      <p class="text-gray-600 max-w-2xl mx-auto">
-        My completed and ongoing trainings:
-      </p>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Musa</div>
+      <nav>
+        <ul>
+          <li><a href="#hero">Ana Sayfa</a></li>
+          <li><a href="#about">Hakkımda</a></li>
+          <li><a href="#trainings">Eğitimler</a></li>
+          <li><a href="#skills">Yetenekler</a></li>
+          <li><a href="#hobbies">Hobiler</a></li>
+          <li><a href="#contact">İletişim</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="trainings-list">
-      <!-- Completed Trainings -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-semibold mb-4 text-primary">Completed Trainings</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li><strong>YouTube:</strong> Hasan Çağrı Güngör - Machine Learning</li>
-          <li><strong>YouTube:</strong> Hasan Çağrı Güngör - NumPy</li>
-          <li><strong>YouTube:</strong> Fehmi Uyar - C/C++</li>
-          <li><strong>YouTube:</strong> Enes Bayram - HTML/CSS</li>
-          <li><strong>Udemy:</strong> Mustafa Murat Coşkun - Complete Python Programming (Beginner to Advanced)</li>
-        </ul>
-      </div>
-      <!-- Ongoing Trainings -->
-      <div class="bg-white p-6 rounded-xl shadow-md">
-        <h3 class="text-xl font-semibold mb-4 text-primary">Ongoing Trainings</h3>
-        <ul class="list-disc list-inside text-gray-700 space-y-2">
-          <li><strong>Udemy:</strong> Atıl Samancıoğlu - Ethical Hacking</li>
-          <li><strong>Udemy:</strong> Atıl Samancıoğlu - Data Science and Machine Learning</li>
-        </ul>
+  </header>
+
+  <section id="hero" class="hero">
+    <h1 id="typewriter"></h1>
+    <p class="subtitle">Yapay zeka ve siber güvenlik tutkunu</p>
+    <div class="social-links">
+      <a href="https://github.com/musa-arrow" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.kaggle.com/zlatmusa" target="_blank"><i class="fab fa-kaggle"></i></a>
+      <a href="https://www.linkedin.com/in/musa-ok-416671351/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <a href="#about" class="btn">Hakkımda</a>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2>Hakkımda</h2>
+      <div class="about-content">
+        <div class="about-item">
+          <p>Merhaba, ben Musa. İstanbul Arel Üniversitesi'nde Bilgisayar Mühendisliği okuyorum.</p>
+        </div>
+        <div class="about-item">
+          <p>Yapay Zeka ve Siber Güvenlik alanlarında tutkulu bir öğrenciyim — her iki alanda da kurslar alıyor ve projeler üzerinde çalışıyorum.</p>
+        </div>
+        <div class="about-item">
+          <p>İlgi alanlarım arasında makine öğrenmesi, derin öğrenme, veri odaklı problem çözme ve dijital sistemlerin nasıl güvence altına alınacağını anlama yer alıyor.</p>
+        </div>
+        <div class="about-item">
+          <p>Yapay zekanın güvenliği artırmak, tespiti otomatikleştirmek ve gerçek dünya zorluklarını çözmek için nasıl kullanılabileceğini keşfetmekten keyif alıyorum.</p>
+        </div>
+        <div class="about-item">
+          <p>Çalışmalarım ve kişisel projelerim kapsamında Python, Linux, makine öğrenmesi çerçeveleri ve Wireshark ve Nmap gibi siber güvenlik araçlarıyla pratik deneyim kazanıyorum.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Skills Section -->
-<section id="skills" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
-<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
-<p class="text-gray-600 max-w-2xl mx-auto">
-Technical skills I have acquired in AI, software development, and cybersecurity
-</p>
-</div>
-<!-- Skill Categories -->
-<div class="flex justify-center mb-12">
-<div class="inline-flex p-1 bg-gray-100 rounded-full">
-<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap bg-primary text-white" data-category="all">All</button>
-<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="programming">Programming</button>
-<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="ai">AI & Data Science</button>
-<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="web">Web Technologies</button>
-<button class="skill-filter px-6 py-2 rounded-full whitespace-nowrap text-gray-700" data-category="security">Cybersecurity</button>
-</div>
-</div>
-<!-- Skills Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Python -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="programming ai security">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-python-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Python</h3>
-</div>
-<p class="text-gray-600 mb-4">Programming, scripting, machine learning, and security automation</p>
-</div>
-<!-- NumPy -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="ai">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-database-2-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">NumPy</h3>
-</div>
-<p class="text-gray-600">Numerical computations, data processing, multi-dimensional arrays</p>
-</div>
-<!-- Pandas -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="ai">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-bar-chart-box-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Pandas</h3>
-</div>
-<p class="text-gray-600">Data analysis, manipulation, cleaning, and visualization</p>
-</div>
-<!-- HTML -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="web">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-html5-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">HTML</h3>
-</div>
-<p class="text-gray-600">Building web page structure, semantic HTML5 elements</p>
-</div>
-<!-- CSS -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="web">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-css3-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">CSS</h3>
-</div>
-<p class="text-gray-600">Web page styling, responsive design, CSS animations</p>
-</div>
-<!-- Machine Learning -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="ai">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-brain-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Machine Learning</h3>
-</div>
-<p class="text-gray-600">ML algorithms, data preprocessing, model training and evaluation</p>
-</div>
-<!-- C/C++ -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="programming">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-code-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">C/C++</h3>
-</div>
-<p class="text-gray-600">Programming, memory management, data structures</p>
-</div>
-<!-- Cybersecurity -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="security">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-shield-keyhole-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Cybersecurity</h3>
-</div>
-<p class="text-gray-600">Threat analysis, penetration testing, network security, digital forensics</p>
-</div>
-<!-- Cursor AI -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="ai">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-robot-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Cursor AI</h3>
-</div>
-<p class="text-gray-600">AI-powered code development, code completion and optimization</p>
-</div>
-<!-- Wireshark & Nmap -->
-<div class="skill-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow" data-category="security">
-<div class="flex items-center mb-4">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-bug-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Wireshark & Nmap</h3>
-</div>
-<p class="text-gray-600">Network analysis, packet inspection, vulnerability scanning</p>
-</div>
-</div>
-</section>
-<!-- Hobbies Section -->
-<section id="hobbies" class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">My Hobbies</h2>
-<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
-<p class="text-gray-600 max-w-2xl mx-auto">
-Activities I enjoy outside of coding
-</p>
-</div>
-<div class="relative">
-<div class="overflow-x-auto scrollbar-hide pb-6">
-<div class="flex space-x-6 min-w-max">
-<!-- Swimming -->
-<div class="w-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Swimming%20pool%20with%20clear%20blue%20water%2C%20professional%20swimming%20lanes%2C%20bright%20and%20modern%20facility%2C%20clean%20and%20well-maintained%2C%20showing%20the%20sport%20of%20swimming%20in%20a%20professional%20setting&width=640&height=360&seq=swimming1&orientation=landscape" alt="Swimming" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-3">
-<i class="ri-swim-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Swimming</h3>
-</div>
-<p class="text-gray-600 mb-6 flex-1">
-I swim regularly twice a week. Water sports help me maintain my physical health and also help me relax mentally.
-</p>
-<div class="flex items-center text-sm text-gray-500">
-<i class="ri-time-line mr-2"></i>
-<span>I've been swimming for 10 years</span>
-</div>
-</div>
-</div>
-<!-- Football -->
-<div class="w-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Modern%20football%20field%20with%20green%20grass%2C%20players%20in%20action%2C%20sunny%20day%2C%20amateur%20football%20match%2C%20showing%20the%20sport%20in%20a%20community%20setting%2C%20energetic%20atmosphere&width=640&height=360&seq=football1&orientation=landscape" alt="Football" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-3">
-<i class="ri-football-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Football</h3>
-</div>
-<p class="text-gray-600 mb-6 flex-1">
-We play football matches with my friends on weekends. It improves my teamwork and strategic thinking skills.
-</p>
-<div class="flex items-center text-sm text-gray-500">
-<i class="ri-time-line mr-2"></i>
-<span>I've been playing for 10 years</span>
-</div>
-</div>
-</div>
-<!-- Table Tennis -->
-<div class="w-80 bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=Table%20tennis%20match%20in%20progress%2C%20modern%20ping%20pong%20table%2C%20players%20in%20action%2C%20indoor%20sports%20facility%2C%20focused%20players%2C%20showing%20the%20precision%20and%20skill%20of%20table%20tennis&width=640&height=360&seq=tabletennis1&orientation=landscape" alt="Table Tennis" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6 flex-1 flex flex-col">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-3">
-<i class="ri-ping-pong-line ri-lg"></i>
-</div>
-<h3 class="text-xl font-semibold">Table Tennis</h3>
-</div>
-<p class="text-gray-600 mb-6 flex-1">
-I play table tennis in my free time at university. It improves my reflexes and increases my ability to make quick decisions.
-</p>
-<div class="flex items-center text-sm text-gray-500">
-<i class="ri-time-line mr-2"></i>
-<span>I've been playing for 3 years</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Scroll buttons -->
-<button id="scrollLeft" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 focus:outline-none z-10 hover:bg-gray-50">
-<i class="ri-arrow-left-s-line ri-lg"></i>
-</button>
-<button id="scrollRight" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center text-gray-700 focus:outline-none z-10 hover:bg-gray-50">
-<i class="ri-arrow-right-s-line ri-lg"></i>
-</button>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Contact</h2>
-<div class="w-20 h-1 bg-primary mx-auto mb-6"></div>
-<p class="text-gray-600 max-w-2xl mx-auto">
-You can contact me for your projects, collaboration opportunities, or any questions you may have.
-</p>
-</div>
-<div class="flex flex-col lg:flex-row gap-12">
-<div class="lg:w-full">
-<div class="bg-white p-8 rounded-xl shadow-md h-full">
-<h3 class="text-2xl font-bold mb-6">My Contact Information</h3>
-<div class="space-y-6 mb-8">
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-mail-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Email</h4>
-<a href="mailto:musaok425@gmail.com" class="text-gray-600 hover:text-primary">musaok425@gmail.com</a>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-phone-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Phone</h4>
-<a href="tel:+905454117205" class="text-gray-600 hover:text-primary">+90 545 411 7205</a>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-map-pin-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">Location</h4>
-<p class="text-gray-600">Istanbul, Turkey</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg text-primary mr-4">
-<i class="ri-school-line ri-lg"></i>
-</div>
-<div>
-<h4 class="font-medium text-lg mb-1">University</h4>
-<p class="text-gray-600">Istanbul Arel University</p>
-</div>
-</div>
-</div>
-<h4 class="font-medium text-lg mb-4">Social Media</h4>
-<div class="flex space-x-4">
-<a href="https://www.linkedin.com/in/musa-ok-416671351/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors" data-readdy="true">
-<i class="ri-linkedin-fill ri-lg"></i>
-</a>
-<a href="https://github.com/musa-arrow" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors" data-readdy="true">
-<i class="ri-github-fill ri-lg"></i>
-</a>
-<a href="https://www.kaggle.com/zlatmusa" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center bg-gray-100 rounded-full text-gray-700 hover:bg-primary hover:text-white transition-colors" data-readdy="true">
-<svg class="kaggle-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/>
-</svg>
-</a>
-</div>
-<div class="mt-8 h-64 rounded-xl overflow-hidden">
-<div style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;" class="w-full h-full"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-12">
-<div class="container mx-auto px-4">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<div class="mb-6 md:mb-0">
-<a href="#" class="text-2xl font-['Pacifico'] text-white">Musa</a>
-<p class="text-gray-400 mt-2">Aspiring Cybersecurity Specialist</p>
-</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a>
-<a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
-<a href="#skills" class="text-gray-400 hover:text-white transition-colors">Skills</a>
-<a href="#hobbies" class="text-gray-400 hover:text-white transition-colors">Hobbies</a>
-<a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-</div>
-</div>
-<hr class="border-gray-800 my-8">
-<div class="flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-500 text-sm mb-4 md:mb-0">
-&copy; 2025 Musa Ok. All rights reserved.
-</p>
-<div class="flex space-x-6">
-<a href="https://www.linkedin.com/in/musa-ok-416671351/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors" data-readdy="true">
-<i class="ri-linkedin-fill ri-lg"></i>
-</a>
-<a href="https://github.com/musa-arrow" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors" data-readdy="true">
-<i class="ri-github-fill ri-lg"></i>
-</a>
-<a href="https://www.kaggle.com/zlatmusa" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-white transition-colors" data-readdy="true">
-<svg class="kaggle-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/>
-</svg>
-</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- Scripts -->
-<script id="navigationScript">
-document.addEventListener('DOMContentLoaded', function() {
-const menuToggle = document.getElementById('menuToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-menuToggle.addEventListener('click', function() {
-mobileMenu.classList.toggle('hidden');
-if (mobileMenu.classList.contains('hidden')) {
-menuToggle.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
-} else {
-menuToggle.innerHTML = '<i class="ri-close-line ri-lg"></i>';
-}
-});
-// Close mobile menu when clicking on a link
-const mobileLinks = mobileMenu.querySelectorAll('a');
-mobileLinks.forEach(link => {
-link.addEventListener('click', function() {
-mobileMenu.classList.add('hidden');
-menuToggle.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
-});
-});
-// Smooth scrolling for all anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function(e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-const targetElement = document.querySelector(targetId);
-if (targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
-}
-});
-});
-});
-</script>
-<script id="skillFilterScript">
-document.addEventListener('DOMContentLoaded', function() {
-const filterButtons = document.querySelectorAll('.skill-filter');
-const skillCards = document.querySelectorAll('.skill-card');
-filterButtons.forEach(button => {
-button.addEventListener('click', function() {
-const category = this.getAttribute('data-category');
-// Update active button
-filterButtons.forEach(btn => {
-btn.classList.remove('bg-primary', 'text-white');
-btn.classList.add('text-gray-700');
-});
-this.classList.remove('text-gray-700');
-this.classList.add('bg-primary', 'text-white');
-// Filter cards
-skillCards.forEach(card => {
-if (category === 'all' || card.getAttribute('data-category') === category) {
-card.style.display = 'block';
-} else {
-card.style.display = 'none';
-}
-});
-});
-});
-});
-</script>
-<script id="hobbiesScrollScript">
-document.addEventListener('DOMContentLoaded', function() {
-const scrollContainer = document.querySelector('.overflow-x-auto');
-const scrollLeftBtn = document.getElementById('scrollLeft');
-const scrollRightBtn = document.getElementById('scrollRight');
-scrollLeftBtn.addEventListener('click', function() {
-scrollContainer.scrollBy({
-left: -320,
-behavior: 'smooth'
-});
-});
-scrollRightBtn.addEventListener('click', function() {
-scrollContainer.scrollBy({
-left: 320,
-behavior: 'smooth'
-});
-});
-});
-</script>
+  </section>
+
+  <section id="trainings" class="trainings">
+    <div class="container">
+      <h2>Eğitimler</h2>
+      <div class="training-container">
+        <div class="training-category">
+          <h3>Tamamlanan Eğitimler</h3>
+          <ul>
+            <li><strong>YouTube:</strong> Hasan Çağrı Güngör - Machine Learning</li>
+            <li><strong>YouTube:</strong> Hasan Çağrı Güngör - NumPy</li>
+            <li><strong>YouTube:</strong> Fehmi Uyar - C/C++</li>
+            <li><strong>YouTube:</strong> Enes Bayram - HTML/CSS</li>
+            <li><strong>Udemy:</strong> Mustafa Murat Coşkun - Complete Python Programming (Beginner to Advanced)</li>
+          </ul>
+        </div>
+        <div class="training-category">
+          <h3>Devam Eden Eğitimler</h3>
+          <ul>
+            <li class="ongoing"><strong>Udemy:</strong> Atıl Samancıoğlu - Ethical Hacking</li>
+            <li class="ongoing"><strong>Udemy:</strong> Atıl Samancıoğlu - Data Science and Machine Learning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Yetenekler</h2>
+      <div class="skill-filter">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="programming">Programlama</button>
+        <button class="filter-btn" data-filter="ai">Yapay Zeka & Veri Bilimi</button>
+        <button class="filter-btn" data-filter="web">Web Teknolojileri</button>
+        <button class="filter-btn" data-filter="security">Siber Güvenlik</button>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" data-category="programming">
+          <h3>Python</h3>
+          <p>Programlama, komut dosyası oluşturma, makine öğrenimi ve güvenlik otomasyonu</p>
+        </div>
+        <div class="skill-card" data-category="ai">
+          <h3>NumPy</h3>
+          <p>Sayısal hesaplamalar, veri işleme, çok boyutlu diziler</p>
+        </div>
+        <div class="skill-card" data-category="ai">
+          <h3>Pandas</h3>
+          <p>Veri analizi, manipülasyonu, temizleme ve görselleştirme</p>
+        </div>
+        <div class="skill-card" data-category="web">
+          <h3>HTML</h3>
+          <p>Web sayfası yapısı oluşturma, anlamsal HTML5 öğeleri</p>
+        </div>
+        <div class="skill-card" data-category="web">
+          <h3>CSS</h3>
+          <p>Web sayfası stillendirme, duyarlı tasarım, CSS animasyonları</p>
+        </div>
+        <div class="skill-card" data-category="ai">
+          <h3>Machine Learning</h3>
+          <p>ML algoritmaları, veri ön işleme, model eğitimi ve değerlendirme</p>
+        </div>
+        <div class="skill-card" data-category="programming">
+          <h3>C/C++</h3>
+          <p>Programlama, bellek yönetimi, veri yapıları</p>
+        </div>
+        <div class="skill-card" data-category="security">
+          <h3>Cybersecurity</h3>
+          <p>Tehdit analizi, penetrasyon testi, ağ güvenliği, dijital adli bilişim</p>
+        </div>
+        <div class="skill-card" data-category="ai">
+          <h3>Cursor AI</h3>
+          <p>Yapay zeka destekli kod geliştirme, kod tamamlama ve optimizasyon</p>
+        </div>
+        <div class="skill-card" data-category="security">
+          <h3>Wireshark & Nmap</h3>
+          <p>Ağ analizi, paket inceleme, güvenlik açığı taraması</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hobbies" class="hobbies">
+    <div class="container">
+      <h2>Hobilerim</h2>
+      <div class="hobby-cards">
+        <div class="hobby-card">
+          <div class="hobby-icon"><i class="fas fa-swimming-pool"></i></div>
+          <h3>Yüzme</h3>
+          <p>Haftada iki kez düzenli olarak yüzüyorum. Su sporları fiziksel sağlığımı korumama yardımcı oluyor ve aynı zamanda zihinsel olarak rahatlamama yardımcı oluyor.</p>
+          <p><em>10 yıldır yüzüyorum</em></p>
+        </div>
+        <div class="hobby-card">
+          <div class="hobby-icon"><i class="fas fa-table-tennis"></i></div>
+          <h3>Masa Tenisi</h3>
+          <p>Üniversitede boş zamanlarımda masa tenisi oynuyorum. Reflekslerimi geliştiriyor ve hızlı karar verme yeteneğimi artırıyor.</p>
+          <p><em>3 yıldır oynuyorum</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>İletişim</h2>
+      <div class="contact-info">
+        <div class="contact-item">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=musaok425@gmail.com" target="_blank" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            <p>musaok425@gmail.com</p>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="tel:+905454117205" class="contact-link">
+            <i class="fas fa-phone"></i>
+            <p>+90 545 411 7205</p>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://maps.google.com/?q=Istanbul,Turkey" target="_blank" class="contact-link">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>İstanbul, Türkiye</p>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://arel.edu.tr" target="_blank" class="contact-link">
+            <i class="fas fa-university"></i>
+            <p>İstanbul Arel Üniversitesi</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://github.com/musa-arrow" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.kaggle.com/zlatmusa" target="_blank"><i class="fab fa-kaggle"></i></a>
+        <a href="https://www.linkedin.com/in/musa-ok-416671351/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p>&copy; 2023 Musa - Tüm Hakları Saklıdır</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
