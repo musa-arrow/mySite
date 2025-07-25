@@ -1029,8 +1029,24 @@ footer p {
   color: var(--text-light);
 }
 
-/* Responsive Design */
+/* Responsive Design - Tamamen Yeniden Düzenlenmiş */
 @media (max-width: 768px) {
+  /* Container düzenlemeleri */
+  .container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+  
+  /* Header mobil düzenlemeleri */
+  header .container {
+    padding: 10px 15px;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  /* Navigation gizleme */
   nav ul {
     display: none;
   }
@@ -1039,18 +1055,325 @@ footer p {
     margin-left: auto;
   }
   
-  .training-container, .skills-grid, .hobby-cards {
-    gap: 20px;
-  }
-  
-  .contact-info {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+  /* Hero section mobil düzenlemeleri */
+  .hero {
+    height: 100vh;
+    padding: 80px 15px 40px;
+    text-align: center;
   }
   
   #typewriter {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+  
+  .social-links {
+    margin: 20px 0;
+  }
+  
+  .social-links a {
+    margin: 0 8px;
+    font-size: 1.2rem;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 0.9rem;
+  }
+  
+  /* Section genel düzenlemeleri */
+  section {
+    padding: 60px 0;
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+  
+  /* About section mobil düzenlemeleri */
+  .about-content {
+    gap: 15px;
+  }
+  
+  .about-item {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .about-item p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* Training section mobil düzenlemeleri */
+  .training-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .training-category {
+    padding: 20px;
+    width: 100%;
+  }
+  
+  .training-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .training-category ul li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding: 8px 0;
+  }
+  
+  /* Skills section mobil düzenlemeleri */
+  .skill-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .filter-btn {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    margin: 2px;
+    min-width: auto;
+    flex: 0 0 auto;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .skill-card {
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .skill-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  /* Hobbies section mobil düzenlemeleri */
+  .hobby-cards {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .hobby-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 25px 20px;
+    margin-bottom: 15px;
+    flex: none;
+  }
+  
+  .hobby-card .hobby-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  
+  .hobby-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  
+  .hobby-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  /* Contact section mobil düzenlemeleri */
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .contact-item {
+    width: 100%;
+    max-width: 300px;
+    padding: 15px;
+  }
+  
+  .contact-item i {
+    font-size: 1.2rem;
+  }
+  
+  .contact-item p {
+    font-size: 0.9rem;
+  }
+  
+  /* Footer mobil düzenlemeleri */
+  footer {
+    padding: 30px 0;
+    text-align: center;
+  }
+  
+  footer .social-links {
+    margin-bottom: 15px;
+  }
+  
+  footer .social-links a {
+    margin: 0 10px;
+    font-size: 1.1rem;
+  }
+  
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Küçük mobil cihazlar için ek düzenlemeler */
+@media (max-width: 480px) {
+  /* Container daha da küçük padding */
+  .container {
+    padding: 0 10px;
+  }
+  
+  /* Header daha kompakt */
+  header .container {
+    padding: 8px 10px;
+  }
+  
+  .logo {
+    font-size: 18px;
+  }
+  
+  /* Hero section daha küçük */
+  #typewriter {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .social-links a {
+    margin: 0 6px;
+    font-size: 1.1rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  /* Section padding daha küçük */
+  section {
+    padding: 50px 0;
+  }
+  
+  section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+  
+  /* Filter butonları daha küçük */
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    margin: 1px;
+  }
+  
+  .skill-filter {
+    gap: 5px;
+  }
+  
+  /* Skill cards daha kompakt */
+  .skill-card {
+    padding: 15px;
+  }
+  
+  .skill-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .skill-card p {
+    font-size: 0.8rem;
+  }
+  
+  /* Hobby cards daha küçük */
+  .hobby-card {
+    padding: 20px 15px;
+  }
+  
+  .hobby-card .hobby-icon {
+    font-size: 30px;
+  }
+  
+  .hobby-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .hobby-card p {
+    font-size: 0.85rem;
+  }
+  
+  /* Contact items daha küçük */
+  .contact-item {
+    padding: 12px;
+    max-width: 280px;
+  }
+  
+  /* Animasyonları hafifletme */
+  .hobby-card {
+    animation: cardFloat 8s ease-in-out infinite;
+  }
+  
+  @keyframes cardFloat {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-2px) rotate(0.2deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+}
+
+/* Çok küçük ekranlar için (320px ve altı) */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  #typewriter {
+    font-size: 1.6rem;
+  }
+  
+  .filter-btn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+  
+  .skill-card, .hobby-card {
+    padding: 12px;
+  }
+  
+  section {
+    padding: 40px 0;
   }
 }
 
